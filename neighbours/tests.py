@@ -5,7 +5,7 @@ from .models import Neighbourhood,Business,Profile
 
 class NeighbourhoodTestClass(TestCase):
     def setUp(self):
-        self.Roasters = neighbourhood(neighbourhood = 'Roasters')
+        self.neighbourhood = Neighbourhood(neighbourhood = 'Roasters')
 
     def test_instance(self):
-        self.assertTrue(isinstance(self.Roasters,neighbourhood))
+        self.assertTrue(isinstance(self.neighbourhood,Neighbourhood))

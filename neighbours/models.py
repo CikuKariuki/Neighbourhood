@@ -23,8 +23,8 @@ class Neighbourhood(models.Model):
     def __str__(self):
         return self.neighbourhood
 
-    # def save_neighbourhood(self):
-    #     self.save()
+    def save_neighbourhood(self):
+        self.save()
     
 class Profile(models.Model):
     avatar = models.ImageField(upload_to = 'avatars/')
