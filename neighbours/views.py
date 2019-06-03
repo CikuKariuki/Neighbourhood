@@ -41,24 +41,10 @@ def create_profile(request):
         form = ProfileForm()
     return render(request,'profile_form.html',{"form":form})
 
-@login_required(login_url='/accounts/login/') 
-def profile(request, username):
-    profile = User.objects.get(username=username)
+@login_required(login_url='/accounts/login/')
+def profile(request,username):
+    user = User.objects.get(username=username)
+    profile =Profile.objects.get(username=user)
 
-    try:
-        profile_details = Profile.get_by_id(profile.id)
-    
-    except:
-        profile_details = Profile.filter_by_id(profile.id)
-      
-
-    posts = Posts.get_profile_posts(profile.id) 
-
-    context = {
-        "profile":profile,
-        "profile_details":profile_details,
-        "posts":posts,
-    }
-
-    return render(request,'profile.html',context)
+    return render(request,'profile.html',{"profile":profile})
 
