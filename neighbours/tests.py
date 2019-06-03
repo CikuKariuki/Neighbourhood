@@ -17,4 +17,15 @@ class NeighbourhoodTestClass(TestCase):
 
 class ProfileTestClass(TestCase):
     def setUp(self):
-        self.wanjiku = Profile(avatar = 'default.png')
+        self.neighbourhood = Neighbourhood(neighbourhood = 'Roasters')
+        self.neighbourhood.save_neighbourhood()
+
+        self.wanjiku = Profile(avatar = '/avatar/default.png',description = 'happy neighbour',neighbourhood = 'roasters',username = 'Ciku',name='Wanjiku',email='ciku@user.com')
+
+    def test_save(self):
+        self.wanjiku.save_profile()
+        profiles = Profile.objects.all()
+        self.assertTrue(len(profiles)>0)
+
+
+class BusinessTestClass(TestCase):
