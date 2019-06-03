@@ -16,13 +16,15 @@ class Business(models.Model):
         business = cls.objects.filter(business_icontains=search_term)
         return business
 
-        
+
 class Neighbourhood(models.Model):
     neighbourhood = models.CharField(max_length = 150)
 
     def __str__(self):
         return self.neighbourhood
 
+    # def save_neighbourhood(self):
+    #     self.save()
     
 class Profile(models.Model):
     avatar = models.ImageField(upload_to = 'avatars/')
