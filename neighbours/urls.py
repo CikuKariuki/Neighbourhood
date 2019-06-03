@@ -7,5 +7,5 @@ urlpatterns = [
     url('^$',views.index,name='index'), 
     url(r'^search/',views.search_results,name='search_results'),
     url(r'^create/profile$',views.create_profile, name='create-profile'),
-
+    url(r'^profile/(?P<username>\w+)', views.profile, name='profile'),
 ]
