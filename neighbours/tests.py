@@ -42,3 +42,7 @@ class BusinessTestClass(TestCase):
         self.business.save_business()
         business = Business.objects.all()
         self.assertTrue(len(profiles)>0)
+
+    def tearDown(self):
+        Profile.objects.all.delete()
+        Business.objects.all().delete()
