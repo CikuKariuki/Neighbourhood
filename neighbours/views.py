@@ -4,6 +4,9 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse,Http404,HttpResponseRedirect
 from .forms import ProfileForm,BusinessForm,CommentForm
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
+from .models import Business,Neighbourhood,Profile,Comment
+from django.contrib.auth.models import User
 
 def index(request):
     return render(request,'hood.html')
@@ -58,3 +61,4 @@ def profile(request, username):
     }
 
     return render(request,'profile.html',context)
+
