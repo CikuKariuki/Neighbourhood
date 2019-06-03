@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 from django.shortcuts import render,redirect
 from django.http import HttpResponse,Http404,HttpResponseRedirect
 from .forms import ProfileForm,BusinessForm,CommentForm
-
+from django.contrib.auth.decorators import login_required
 
 def index(request):
     return render(request,'hood.html')

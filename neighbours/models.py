@@ -46,4 +46,8 @@ class Profile(models.Model):
     def save_profile(self):
         self.save()
 
-    
+
+class Comment(models.Model):
+    comment = models.CharField(max_length=300)
+    username = models.ForeignKey(User,on_delete=models.CASCADE)
+    post = models.ForeignKey(Business,on_delete=models.CASCADE)

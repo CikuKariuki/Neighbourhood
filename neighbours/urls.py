@@ -9,5 +9,3 @@ urlpatterns = [
     url(r'^create/profile$',views.create_profile, name='create-profile'),
 
 ]
-if settings.DEBUG:
-    urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
