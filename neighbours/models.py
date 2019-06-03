@@ -15,3 +15,14 @@ class Business(models.Model):
     def search_by_business(cls,search_term):
         business = cls.objects.filter(business_icontains=search_term)
         return business
+
+class Profile(models.Model):
+    avatar = models.ImageField(upload_to = 'avatars/')
+    description = models.TextField()
+    neighbourhood = models.ForeignKey(Neighbourhood, on_delete=models.CASCADE)
+    username = models.ForeignKey(User,on_delete=models.CASCADE)
+    name = models.CharField(max_length = 150)
+    email = models.EmailField()
+
+    def __str__(self):
+        return self.name
