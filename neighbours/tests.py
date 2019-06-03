@@ -14,3 +14,7 @@ class NeighbourhoodTestClass(TestCase):
         self.neighbourhood.save_neighbourhood()
         neighbourhood = Neighbourhood.objects.all()
         self.assertTrue(len(neighbourhood)>0)
+
+class ProfileTestClass(TestCase):
+    def setUp(self):
+        self.wanjiku = Profile(avatar = 'default.png')
