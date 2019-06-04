@@ -45,6 +45,14 @@ class Profile(models.Model):
     def save_profile(self):
         self.save()
 
+class health(models.Model):
+    health = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.health
+
+    def save_health(self):
+        self.save()
 
 class Comment(models.Model):
     comment = models.CharField(max_length=300)
