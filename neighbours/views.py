@@ -48,3 +48,45 @@ def profile(request,username):
 
     return render(request,'profile.html',{"profile":profile})
 
+def single_hood(request,location):
+ 
+    location = Neighbourhood.objects.get(name=location) 
+    print(location.location)
+    businesses = Business.get_location_businesses(location.id) 
+    posts = Posts.get_location_posts(location.id)
+    
+    business_form = BusinessForm(request.POST)
+    if request.method == 'POST':
+        if business_form.is_valid():
+            business = business_form.save(commit=False)
+            business.user = request.user
+            business.location = location
+            business.save()
+        return redirect('single_hood',location)
+    
+    else:
+        business_form = BusinessForm()
+        
+    
+    posts_form = PostsForm(request.POST)
+    if request.method == 'POST':
+        if posts_form.is_valid():
+            posts = posts_form.save(commit=False)
+            posts.user = request.user
+            posts.location = location
+            posts.save()
+        return redirect('single_hood',location)
+    
+    else:
+        posts_form = BusinessForm()  
+        
+    context = {"location":location,
+               "businesses":businesses,
+               'business_form':business_form,
+               "posts_form":posts_form,
+                "posts":posts
+                }
+    
+    
+    return render(request,'hood.html',context)
+
