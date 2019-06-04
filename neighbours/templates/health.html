@@ -16,11 +16,11 @@
 <div class="row">
 
 
-  {% for heal in health %}
+  {% for health in healthservices %}
   <div class="col-md-6">
   <div class="card" style="width: 25rem;margin-top:10px;" >
   <div class="card-body">
-      <h3 class="card-title" data-toggle="modal" data-target="#{{health.id}}">{{heal.name}}</h3>
+      <h3 class="card-title" data-toggle="modal" data-target="#{{health.id}}">{{health.name}}</h3>
   </div>
 </div>
 </div>
@@ -32,19 +32,19 @@
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content text-center">
       <div class="modal-header text-center">
-        <h3 class="text-center">{{heal.name}}</h3>
+        <h3 class="text-center">{{health.name}}</h3>
       </div>
       <div class="modal-body">
         <img class="card-img-top" src="{{health.logo.url}}" height=200 width=100 >
 
         <h4 class="text-center">Contacts</h4>
-        <p><span class="bold">Phone Number:</span> {{heal.contact}}</p>
-        <p><span class="bold">Address:</span> {{heal.address}}</p>
-        <p><span class="bold">Email:</span> {{heal.email}}</p>
+        <p><span class="bold">Phone Number:</span> {{health.contact}}</p>
+        <p><span class="bold">Address:</span> {{health.address}}</p>
+        <p><span class="bold">Email:</span> {{health.email}}</p>
       </div>
       <div class="modal-footer" style="display:block;">
-        {% for health in heal.health.all %}
-            <button class="btn btn-primary">{{ health }}</button>
+        {% for healthservice in health.healthservices.all %}
+            <button class="btn btn-primary">{{ healthservice }}</button>
         {% endfor%}
 
     </div>
@@ -57,5 +57,17 @@
 
 </div>
 
+<style>
+.bold{
+  font-weight: bold;
+}
+h3{
+  text-align: center;
+}
+h1{
+  color:white;
+  text-align:center;
+}
+</style>
 
 {% endblock %}
