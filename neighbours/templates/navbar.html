@@ -5,10 +5,15 @@
     }
 </style>
 <nav class="navbar navbar-default navigation-clean ">
-    <a class="navbar-brand" href="/">Neighbourhood</a>
+ 
 
-    <div class="dropdown-content" id="navbarSupportedContent">
-        <ul class="navbar-nav mr-auto">
+    <div class="dropdown-content" id="navbarSupportedContent" >
+            <a class="navbar-brand" href="/">Neighbourhood</a>
+        <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_results'%}">
+            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="blog">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+        </form>
+        <ul class="navbar-right nav navbar-nav" style="display:inline-block;">
 
             {% if user.is_superuser %}
             <li class="nav-item">
@@ -33,11 +38,6 @@
             </li>
             {% endif %}
         </ul>
-
-        <form class="form-inline my-2 my-lg-0" role="search" action="{% url 'search_results'%}">
-            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="blog">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
     </div>
 
 </nav>
