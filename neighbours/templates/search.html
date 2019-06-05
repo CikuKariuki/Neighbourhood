@@ -1,7 +1,5 @@
 {% extends 'base.html' %}
-
 {% block content %}
-
 
 <head>
   <meta charset="utf-8">
@@ -18,7 +16,7 @@
     {% if blogs %}
     <h2> Found {{blogs|length}} results with the search term "{{message}}"</h2>
     {% else %}
-    <h2> Found 0 results for the search term "{{message}}"</h2>
+    <h2 style="background-color:#c5e1a5;"> Found 0 results for the search term "{{message}}"</h2>
     {% endif %}
   </div>
 
@@ -52,10 +50,5 @@
   </div>
     {%endif %}
 </div>
-<style>
-h2{
-  color:white;
-}
 
-</style>
 {% endblock %}
