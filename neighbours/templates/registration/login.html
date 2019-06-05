@@ -4,11 +4,11 @@
 
 {% block content %}
 <style>
-    body{
-      background-image: url('https://images.pexels.com/photos/2380249/pexels-photo-2380249.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1500');
-    
-    }
-    </style>
+  body {
+    background-image: url('https://images.pexels.com/photos/2380249/pexels-photo-2380249.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=1500');
+
+  }
+</style>
 <div class="container">
   <div class="row">
     <!-- Empty div -->
@@ -18,27 +18,27 @@
     <div class="col-md-4 form-section">
 
       {% if form.errors %}
-        <p>Password or Username is incorrect</p>
+      <p>Password or Username is incorrect</p>
       {% endif %}
 
       <div class="panel panel-default" style="margin-top:100px;">
 
         <div class="panel-body">
 
-          <div >
-          <form action="/accounts/login/" method="post">
+          <div>
+            <form action="/accounts/login/" method="post">
 
-            {% csrf_token%}
-            {% bootstrap_form form %}
+              {% csrf_token%}
+              {% bootstrap_form form %}
 
-            <div class="form-group">
-              <input type="submit" class="btn btn-primary login-button" value="Log in">
+              <div class="form-group">
+                <input type="submit" class="btn btn-primary login-button" value="Log in">
 
-            </div>
-            <input type="hidden" name="next" value="/">
-            <p> Don't have  an account? <span><a class="" href="/accounts/register">Sign Up</a></span></p>
-          </form>
-        </div>
+              </div>
+              <input type="hidden" name="next" value="/">
+              <p> Don't have an account? <span><a class="" href="/accounts/register">Sign Up</a></span></p>
+            </form>
+          </div>
         </div>
 
       </div>

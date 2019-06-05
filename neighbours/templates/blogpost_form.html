@@ -10,13 +10,11 @@
     <div class="col-md-4 phone-section">
     </div>
 
-
-
     <div class="col-md-4 form-section">
       {{form.media}}
 
-    {% if form.errors %}
-        <p>Please enter correct value</p>
+      {% if form.errors %}
+      <p>Please enter correct value</p>
       {% endif %}
 
       <div class="panel panel-default" style="margin-top:210px;">
@@ -24,19 +22,19 @@
         <div class="panel-body">
 
           <div class="text-center">
-          <form action="{% url 'new-blogpost' %}" method="post" enctype="multipart/form-data">
+            <form action="{% url 'new-blogpost' %}" method="post" enctype="multipart/form-data">
 
-            {% csrf_token%}
-            {% bootstrap_form form %}
+              {% csrf_token%}
+              {% bootstrap_form form %}
 
-            <div class="form-group">
-              <input type="submit" class="btn btn-primary login-button" value="Post">
+              <div class="form-group">
+                <input type="submit" class="btn btn-primary login-button" value="Post">
 
-            </div>
-            <input type="hidden" name="next" value="/">
+              </div>
+              <input type="hidden" name="next" value="/">
 
-          </form>
-        </div>
+            </form>
+          </div>
         </div>
 
       </div>
@@ -49,20 +47,24 @@
 </div>
 
 <style>
-.panel{
-  background: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) fixed;
-}
-p, label,a{
-  color:white;
-  font-size: 15px;
-}
-.panel-default{
-  border-color: inherit;
-}
-input{
-  text-align: center;
-  color: white;
-}
+  .panel {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)) fixed;
+  }
 
+  p,
+  label,
+  a {
+    color: white;
+    font-size: 15px;
+  }
+
+  .panel-default {
+    border-color: inherit;
+  }
+
+  input {
+    text-align: center;
+    color: white;
+  }
 </style>
 {% endblock %}

@@ -5,38 +5,53 @@
     <div class="row">
         <div class="col-md-4">
             <a href="{% url 'health'%}">
-                <div class="card" style="width: 22.5rem;height:15rem;">
-                    <img class="card-img-top dark"
-                        src="https://images.pexels.com/photos/42230/teddy-teddy-bear-association-ill-42230.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                        style="width:34rem;height:28rem;">
-                    <div class="centered">
-                        <h4 style="color:white; font-size:30px;">Medical Services</h4>
+                <div class="panel panel-default">
+                    <div class="panel heading" style="height:50px;">
+                        <p style="font-family: 'Cinzel', serif;">Medical Services</p>
                     </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-4">
-            <a href="{% url 'businesses'%}">
-                <div class="card" style="width: 22.5rem;height:15rem;">
-                    <img class="card-img-top dark"
-                        src="https://images.pexels.com/photos/811103/pexels-photo-811103.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                        style="width:34rem;height:28rem;">
-                    <div class="centered">
-                        <h4 style="color:white; font-size:30px;">Businesses</h4>
+                    <div class="panel-body" style="height:300px;">
+                        <div class="card" style="width: 22.5rem;height:15rem;">
+                            <img class="card-img-top dark"
+                                src="https://images.pexels.com/photos/42230/teddy-teddy-bear-association-ill-42230.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                                style="width:330px;height:250px;">
+                        </div>
+
                     </div>
-                </div>
-            </a>
-        </div>
-        <div class="col-md-4">
-            <a href="{% url 'authorities'%}">
-                <div class="card" style="width: 22.5rem;height:15rem;">
-                    <img class="card-img-top dark" src="https://images.pexels.com/photos/532001/pexels-photo-532001.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500" style="width:34rem;height:28rem;">
-                    <div class="centered">
-                        <h4 style="color:white; font-size:30px;">Security</h4>
-                    </div>
-                </div>
             </a>
         </div>
     </div>
+    <div class="col-md-4">
+        <a href="{% url 'businesses'%}">
+            <div class="panel panel-default">
+                <div class="panel heading" style="height:50px;">
+                    <p style="font-family: 'Cinzel', serif;">Businesses</p>
+                </div>
+                <div class="panel-body" style="height:300px;">
+                    
+                        <img class="card-img-top dark"
+                            src="https://images.pexels.com/photos/811103/pexels-photo-811103.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+                            style="width:330px;height:250px;">
+                    </div>
+                
+        </a>
+
+    </div>
+</div>
+<div class="col-md-4">
+    <a href="{% url 'authorities'%}">
+        <div class="panel panel-default">
+            <div class="panel heading" style="height:50px;">
+                <p style="font-family: 'Cinzel', serif;">Security</p>
+            </div>
+            <div class="panel-body" style="height:300px;">
+                <img class="card-img-top dark"
+                    src="https://images.pexels.com/photos/532001/pexels-photo-532001.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
+                    style="width:330px;height:250px;">
+            </div>
+        </div>
+    </a>
+</div>
+</div>
+</div>
 </div>
 {% endblock %}

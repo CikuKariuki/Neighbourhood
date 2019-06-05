@@ -2,12 +2,12 @@
 {% load static %}
 {% load staticfiles %}
 
-
 {% block content %}
 <div class="container" style="margin-top:15px;">
   <div class="text-center">
-    <a href="{% url 'new-notification' %}" >
-        <button class="btn btn-primary" style="height:50px;  margin-top: -6px;margin-bottom:10px;">Post Notification</button>
+    <a href="{% url 'new-notification' %}">
+      <button class="btn btn-primary" style="height:50px;  margin-top: -6px;margin-bottom:10px;">Post
+        Notification</button>
     </a>
   </div>
 
@@ -32,7 +32,8 @@
       </tr>
 
       <!-- Modal -->
-      <div class="modal fade" id="{{notification.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal fade" id="{{notification.id}}" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
           <div class="modal-content text-center">
             <div class="modal-header text-center">
@@ -48,19 +49,9 @@
           </div>
         </div>
       </div>
-
-
-
-
-
-  {% endfor%}
-  </tbody>
+      {% endfor%}
+    </tbody>
   </table>
 </div>
-<style>
-table{
-  width:1000px;
-}
 
-</style>
 {% endblock %}
